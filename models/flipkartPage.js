@@ -3,6 +3,7 @@ const { By, Key, until } = require('selenium-webdriver');
 class FlipkartPage {
     constructor(driver) {
         this.driver = driver;
+
     }
 
     async navigateToHomePage() {
@@ -13,7 +14,7 @@ class FlipkartPage {
     async searchForProduct(productName) {
         let searchInput = await this.driver.findElement(By.name('q'));
         await searchInput.sendKeys(productName, Key.RETURN);
-        await this.driver.wait(until.titleIs(`Search results for "${productName}"`), 5000);
+        await this.driver.wait(until.titleIs(`${productName}- Buy Products Online at Best Price in India - All Categories | Flipkart.com`), 5000);
     }
 
     async filterByCategory(category) {
@@ -23,12 +24,12 @@ class FlipkartPage {
 
     async clickCheckbox(checkboxXPath) {
         await this.driver.findElement(By.xpath(checkboxXPath)).click();
-        await this.driver.sleep(1000);
+        await this.driver.sleep(2000);
     }
 
     async clickSortOption(sortOption) {
         await this.driver.findElement(By.xpath(`//div[text()='${sortOption}']`)).click();
-        await this.driver.sleep(1000);
+        await this.driver.sleep(2000);
     }
 
     async getProductDetails() {

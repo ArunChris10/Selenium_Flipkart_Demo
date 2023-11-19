@@ -6,7 +6,7 @@ const FlipkartPage = require('./models/flipkartPage');
 describe('Flipkart Test', function () {
     let driver;
     let flipkartPage;
-    this.timeout(60000);
+    this.timeout(200000);
     // Setup before running the tests
     before(async function () {
         driver = await new Builder().forBrowser('chrome').build();
@@ -16,11 +16,11 @@ describe('Flipkart Test', function () {
 
     // Cleanup after running the tests
     after(async function () {
-        // await driver.quit();
+        await driver.quit();
     });
 
     it('should navigate to the home page and search for Samsung Galaxy S10', async function () {
-        this.timeout(60000);
+
         // Navigate to the home page
         await flipkartPage.navigateToHomePage();
 
