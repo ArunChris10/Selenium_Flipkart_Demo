@@ -1,0 +1,21 @@
+{
+  "name": "selenium_flipkart_demo",
+  "version": "1.0.0",
+  "description": "Project to demonstrate flipkart test automation using Selenium and Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha flipkartTest.spec.js",
+    "postinstall": "npm update browserstack-node-sdk",
+    "test-browserstack": "browserstack-node-sdk mocha flipkartTest.spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^4.15.0"
+  },
+  "devDependencies": {
+    "browserstack-node-sdk": "^1.31.2",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
+  }
+}
